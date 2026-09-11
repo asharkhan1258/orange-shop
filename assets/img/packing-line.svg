@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#f8f4ec"/><stop offset="1" stop-color="#eef7ef"/></linearGradient>
+    <linearGradient id="belt" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#315f43"/><stop offset="1" stop-color="#183827"/></linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <rect x="90" y="430" width="1020" height="110" rx="30" fill="url(#belt)"/>
+  <rect x="140" y="515" width="920" height="45" rx="18" fill="#163323" opacity=".45"/>
+  <g fill="#f68b1f" stroke="#da6c09" stroke-width="8">
+    <circle cx="210" cy="397" r="52"/><circle cx="340" cy="390" r="52"/><circle cx="470" cy="402" r="52"/>
+    <circle cx="600" cy="388" r="52"/><circle cx="730" cy="400" r="52"/><circle cx="860" cy="391" r="52"/>
+    <circle cx="990" cy="401" r="52"/>
+  </g>
+  <g fill="#67a848">
+    <ellipse cx="238" cy="348" rx="26" ry="13" transform="rotate(-26 238 348)"/>
+    <ellipse cx="622" cy="339" rx="28" ry="14" transform="rotate(-18 622 339)"/>
+    <ellipse cx="1012" cy="350" rx="28" ry="14" transform="rotate(-30 1012 350)"/>
+  </g>
+  <g fill="#ffffff" stroke="#d8dfda" stroke-width="8">
+    <rect x="125" y="115" width="250" height="180" rx="22"/><rect x="475" y="115" width="250" height="180" rx="22"/><rect x="825" y="115" width="250" height="180" rx="22"/>
+  </g>
+  <g fill="#214c35" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="250" y="185" font-size="34">SORT</text><text x="250" y="235" font-size="20" font-weight="400">Color • Size • Quality</text>
+    <text x="600" y="185" font-size="34">PACK</text><text x="600" y="235" font-size="20" font-weight="400">Retail • Bulk • Custom</text>
+    <text x="950" y="185" font-size="34">SHIP</text><text x="950" y="235" font-size="20" font-weight="400">Cold Chain • On Time</text>
+  </g>
+</svg>
