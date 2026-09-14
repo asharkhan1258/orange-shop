@@ -4,8 +4,8 @@
 This is a static HTML/CSS/Bootstrap website concept inspired by the page organization and clean produce-industry presentation of SunPacific.com, but with original copy, original/local orange artwork and a single-product focus on oranges.
 
 ## Included pages
-- index.html
-- our-story.html
+- /
+- about.html
 - oranges.html
 - seasonal-availability.html
 - farm.html
