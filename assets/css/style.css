@@ -17,6 +17,221 @@ body {
   background:#fff;
   line-height:1.7
 }
+/* ================================
+   GENCON NEW BUTTONS + CART ONLY
+================================ */
+
+/* Top Bar */
+.gencon-top-bar {
+    background: #161616;
+    padding: 8px 0;
+}
+
+.gencon-top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gencon-top-bar a i {
+    margin-right: 7px;
+}
+
+
+/* Navbar Cart */
+.gencon-cart-link {
+    position: relative;
+}
+
+.gencon-cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background: #ff8000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Add To Cart Button */
+.gencon-add-cart-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 0;
+    border-radius: 30px;
+    background: #ff8000;
+    color: #fff;
+    padding: 10px 20px;
+    min-width: 145px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.gencon-add-cart-btn:hover {
+    background: #e86600;
+    color: #fff;
+}
+
+
+/* Still Growing Button */
+.gencon-still-growing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 30px;
+    background: #f6ead9;
+    color: #80551e;
+    padding: 9px 22px;
+    min-width: 145px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: default;
+}
+
+
+/* Cart Panel */
+.gencon-cart-panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 390px;
+    max-width: 92%;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, .15);
+    transition: right .3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gencon-cart-panel.active {
+    right: 0;
+}
+
+
+/* Cart Header */
+.gencon-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.gencon-cart-header h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.gencon-cart-close {
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* Cart Items */
+.gencon-cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.gencon-empty-cart {
+    margin: 0;
+    text-align: center;
+    color: #777;
+}
+
+
+.gencon-cart-item {
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.gencon-cart-item-name {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.gencon-cart-item-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e86600;
+}
+
+
+/* Cart Footer */
+.gencon-cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.gencon-cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.gencon-cart-total strong {
+    color: #e86600;
+}
+
+
+/* Cart Action Buttons */
+.gencon-cart-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.gencon-purchase-btn,
+.gencon-checkout-btn {
+    flex: 1;
+    border: 0;
+    border-radius: 30px;
+    padding: 11px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gencon-purchase-btn {
+    background: #161616;
+    color: #fff;
+    text-align: center;
+}
+
+.gencon-checkout-btn {
+    background: #ff8000;
+    color: #fff;
+}
+
+.gencon-purchase-btn:hover,
+.gencon-checkout-btn:hover {
+    opacity: .9;
+}
+
+
 a {
   text-decoration:none
 }
@@ -373,6 +588,32 @@ img {
   z-index:1000;
   box-shadow:0 10px 25px rgba(0,0,0,.18)
 }
+
+.california-page{background:#fffaf4}
+.california-page .source-copy p,.california-page .source-copy li{font-size:1.03rem;line-height:1.8;color:#333}
+.california-page .source-copy strong{font-weight:700}
+.california-page .source-copy h2{font-weight:800}
+.california-hero{background:linear-gradient(135deg,#fff4df,#fffaf4);padding:75px 0 45px;border-bottom:1px solid #f0dfc9}
+.california-hero img{width:210px;height:210px;object-fit:contain;background:#fff;border-radius:50%;box-shadow:0 15px 40px rgba(90,55,20,.12)}
+.coupon-box{background:#fff;border:1px solid #ead8bd;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(90,55,20,.07)}
+.coupon-box .coupon{color:#ff8000;text-decoration:underline;font-weight:800}
+.price-note{background:#161616;color:#ff8000;border-radius:10px;padding:15px 20px;text-align:center;font-size:1.05rem}
+.service-img{max-width:100%;height:auto;display:block;margin:25px auto}
+.product-slider-section{background:#fff;padding:70px 0}
+.product-slide-card{height:100%;background:#fff;border:1px solid #ead8bd;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(76,45,12,.08)}
+.product-slide-card img{width:100%;height:245px;object-fit:contain;background:#fff7ed;padding:18px}
+.product-slide-card .card-body{padding:22px}
+.product-slide-card h3{font-size:1.02rem;min-height:58px;color:#222}
+.product-slide-card .vendor{font-size:.88rem;color:#777}
+.product-slide-card .stars{color:#ff8000;letter-spacing:1px}
+.product-slide-card .price{font-size:1.25rem;font-weight:800;color:#e86600}
+.product-slide-card .status{display:inline-block;background:#f6ead9;color:#80551e;border-radius:30px;padding:5px 12px;font-size:.78rem;font-weight:700}
+.carousel-control-prev,.carousel-control-next{width:48px;height:48px;top:45%;bottom:auto;border-radius:50%;background:#ff8000;opacity:1}
+.carousel-control-prev{left:-25px}.carousel-control-next{right:-25px}
+.carousel-indicators{bottom:-48px}
+.carousel-indicators [data-bs-target]{background:#ff8000;width:28px;height:5px;border:0;border-radius:5px}
+
+
 @media (max-width:991.98px) {
   .hero {
     min-height:560px;
@@ -384,6 +625,9 @@ img {
   .page-hero {
     padding:90px 0 70px
   }
+  .carousel-control-prev{left:-10px}
+.carousel-control-next{right:-10px}
+.product-slide-card img{height:220px}
 }
 @media (max-width:575.98px) {
   .brand-name {
@@ -400,6 +644,8 @@ img {
     padding:68px 0
   }
 }
+
+
 
 
 /* Added shopping and California orange pages */
@@ -422,3 +668,23 @@ img {
 .orange-carousel .carousel-item img { height:390px; object-fit:contain; background:#fffaf4; border-radius:24px; }
 .orange-carousel .carousel-caption { background:rgba(23,49,41,.86); border-radius:15px; padding:12px 18px; }
 @media(max-width:575.98px){ .orange-carousel .carousel-item img{height:280px;} .product-card .product-img{height:200px;} }
+
+/* Mobile */
+@media (max-width: 575px) {
+
+    .gencon-cart-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .gencon-add-cart-btn,
+    .gencon-still-growing {
+        width: 100%;
+    }
+    .california-hero{padding:50px 0 35px}
+.product-slide-card img{height:210px}
+.carousel-control-prev,.carousel-control-next{width:40px;height:40px}
+.carousel-control-prev{left:0}
+.carousel-control-next{right:0}
+
+}

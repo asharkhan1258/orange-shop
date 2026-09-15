@@ -19,7 +19,7 @@ This is a static HTML/CSS/Bootstrap website concept inspired by the page organiz
 
 ## Business details used
 - Business name: Gencon Consulting Inc.
-- Business formed: 1982
+- EST. 1982
 
 ## Tech
 - HTML5

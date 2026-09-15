@@ -12,80 +12,148 @@
   <link href="assets/css/style.css" rel="stylesheet"/>
  </head>
  <body>
+<div class="top-strip">
+   <div class="container d-flex justify-content-end  gap-3 flex-wrap">
+   
+    <span>
+     <a href="tel:+18889912915" class="text-decoration-none text-white fw-bold">
+            <i class="bi bi-telephone-fill"></i>
+            +1 (888) 991-2915
+        </a>
+    </span>
+   </div>
+  </div>
 
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-   <div class="container py-2">
-    <a class="navbar-brand" href="/">
-     <img alt="Gencon Consulting Inc. orange logo" class="brand-logo" src="assets/img/gencon-logo.jpg"/>
-     <span class="brand-name">
-      Gencon Consulting Inc.
-      <small>
-        EST. 1982
-      </small>
-     </span>
-    </a>
-    <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
-     <span class="navbar-toggler-icon">
-     </span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-     <ul class="navbar-nav ms-auto align-items-lg-center">
-      <li class="nav-item">
-       <a class="nav-link" href="/">
-        Home
-       </a>
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="california-oranges.html">
-        Shop
-       </a>
-      </li>
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">
-        Operation
-       </a>
-       <ul class="dropdown-menu border-0 shadow">
-        <li><a class="dropdown-item" href="oranges.html">Oranges</a></li>
-        <li>
-         <a class="dropdown-item" href="farm.html">
-          Farm
-         </a>
-        </li>
-        <li>
-         <a class="dropdown-item" href="packing-house.html">
-          Packing House
-         </a>
-        </li>
-        <li>
-         <a class="dropdown-item" href="seasonal-availability.html">
-          Seasonal Availability
-         </a>
-        </li>
-        <li>
-       <a class="dropdown-item"href="sales-marketing.html">
-        Sales &amp; Marketing
-       </a>
-      </li>
-        <a class="dropdown-item"href="sustainability.html">
-        Sustainability
-       </a>
-      </li>
-       </ul>
-      </li>
-      
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-        About Us
-       </a>
-       <ul class="dropdown-menu border-0 shadow">
-         <li><a class="dropdown-item" href="about.html">About</a></li>
-         <li><a class="dropdown-item" href="contact.html">Contact US</a></li>
-       </ul>
-      </li>
-     </ul>
+    <div class="container py-2">
+
+        <a class="navbar-brand" href="/">
+            <img
+                alt="Gencon Consulting Inc. orange logo"
+                class="brand-logo"
+                src="assets/img/gencon-logo.jpg"
+            />
+
+            <span class="brand-name">
+                Gencon Consulting Inc.
+                <small>EST. 1982</small>
+            </span>
+        </a>
+
+        <button
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler border-0"
+            data-bs-target="#mainNav"
+            data-bs-toggle="collapse"
+            type="button"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="california-oranges.html">Shop</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        href="#"
+                        role="button"
+                    >
+                        Operation
+                    </a>
+
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li>
+                            <a class="dropdown-item" href="oranges.html">
+                                Oranges
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="farm.html">
+                                Farm
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="packing-house.html">
+                                Packing House
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="seasonal-availability.html">
+                                Seasonal Availability
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="sales-marketing.html">
+                                Sales &amp; Marketing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="sustainability.html">
+                                Sustainability
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        href="#"
+                        role="button"
+                    >
+                        About Us
+                    </a>
+
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li>
+                            <a class="dropdown-item" href="about.html">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="contact.html">
+                                Contact US
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+               
+
+            </ul>
+        </div>
+        <div>
+           <!-- CART -->
+                <div class="nav-item">
+                    <a class="nav-link gencon-cart-link" href="#cart" id="cartToggle">
+                        <i class="bi bi-cart3"></i>
+                        Add to Cart
+                        <span class="gencon-cart-count" id="cartCount">0</span>
+                    </a>
+                  </div>
+        </div>
     </div>
-   </div>
-  </nav>
+</nav>
   <section class="page-hero">
    <div class="container">
     <nav aria-label="breadcrumb">
@@ -162,7 +230,7 @@
          Gencon Consulting Inc.
         </h5>
         <small>
-         Business formed: 1982
+         EST. 1982
         </small>
        </div>
       </div>
@@ -257,11 +325,9 @@
     <hr class="border-light opacity-25 my-4"/>
     <div class="d-flex justify-content-between flex-wrap gap-2 small">
      <span>
-      © 2026 Gencon Consulting Inc. All rights reserved.
+      © 2026 Gencon Consulting, Inc. | Anaheim, CA 92807-4219 | All Rights Reserved
      </span>
-     <span>
-      Orange-only website concept.
-     </span>
+     
     </div>
    </div>
   </footer>
