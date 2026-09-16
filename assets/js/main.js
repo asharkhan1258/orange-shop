@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ==========================================
@@ -32,136 +31,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==========================================
-       CREATE CART LINK IN NAVBAR
-    ========================================== */
-
-    const navbarList = document.querySelector(".navbar-nav");
-
-    if (navbarList && !document.getElementById("cartToggle")) {
-
-        const cartLi = document.createElement("li");
-
-        cartLi.className = "nav-item";
-
-        cartLi.innerHTML = `
-            <a class="nav-link gencon-cart-link" href="#cart" id="cartToggle">
-                <i class="bi bi-cart3"></i>
-                Add to Cart
-                <span class="gencon-cart-count" id="cartCount">0</span>
-            </a>
-        `;
-
-        navbarList.appendChild(cartLi);
-    }
-
-
-    /* ==========================================
-       CREATE CART PANEL
-       IF PAGE DOES NOT HAVE ONE
-    ========================================== */
-
-    if (!document.getElementById("cartPanel")) {
-
-        const cartPanel = document.createElement("div");
-
-        cartPanel.className = "gencon-cart-panel";
-
-        cartPanel.id = "cartPanel";
-
-        cartPanel.innerHTML = `
-            
-            <div class="gencon-cart-header">
-
-                <h4>
-                    <i class="bi bi-cart3"></i>
-                    Your Cart
-                </h4>
-
-                <button
-                    type="button"
-                    class="gencon-cart-close"
-                    id="cartClose"
-                >
-                    <i class="bi bi-x-lg"></i>
-                </button>
-
-            </div>
-
-
-            <div
-                class="gencon-cart-items"
-                id="cartItems"
-            >
-            </div>
-
-
-            <div class="gencon-cart-footer">
-
-                <div class="gencon-cart-total">
-
-                    <span>Total</span>
-
-                    <strong id="cartTotal">
-                        $0.00 USD
-                    </strong>
-
-                </div>
-
-
-                <div class="gencon-cart-actions">
-
-                    <a
-                        href="tel:+18889912915"
-                        class="gencon-purchase-btn"
-                    >
-                        Purchase
-                    </a>
-
-                    <button
-                        type="button"
-                        class="gencon-checkout-btn"
-                    >
-                        Check Out
-                    </button>
-
-                </div>
-
-            </div>
-        `;
-
-        document.body.appendChild(cartPanel);
-    }
-
-
-    /* ==========================================
        GET CART ELEMENTS
     ========================================== */
 
-    const cartToggle =
-        document.getElementById("cartToggle");
+    const cartToggle = document.getElementById("cartToggle");
+    const cartClose = document.getElementById("cartClose");
+    const cartPanel = document.getElementById("cartPanel");
+    const cartCount = document.getElementById("cartCount");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
 
-    const cartClose =
-        document.getElementById("cartClose");
 
-    const cartPanel =
-        document.getElementById("cartPanel");
+    /* ==========================================
+       CART LINK
+       HIDDEN UNTIL PRODUCT IS ADDED
+    ========================================== */
 
-    const cartCount =
-        document.getElementById("cartCount");
+    function updateCartLink() {
 
-    const cartItems =
-        document.getElementById("cartItems");
+        if (!cartToggle) {
+            return;
+        }
 
-    const cartTotal =
-        document.getElementById("cartTotal");
+        if (cart.length > 0) {
+            cartToggle.style.display = "inline-flex";
+        } else {
+            cartToggle.style.display = "none";
+        }
+    }
 
 
     /* ==========================================
        OPEN CART
-       ONLY WHEN NAVBAR CART IS CLICKED
     ========================================== */
 
-    if (cartToggle) {
+    if (cartToggle && cartPanel) {
 
         cartToggle.addEventListener("click", function (e) {
 
@@ -177,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
        CLOSE CART
     ========================================== */
 
-    if (cartClose) {
+    if (cartClose && cartPanel) {
 
         cartClose.addEventListener("click", function () {
 
@@ -211,11 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
             /* Add product */
 
             cart.push({
-
                 name: productName,
-
                 price: productPrice
-
             });
 
 
@@ -227,15 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-            /* Update count */
+            /* Update cart */
 
             updateCart();
 
 
-            /*
-            IMPORTANT:
-            Cart menu does NOT open automatically.
-            */
+            /* Show cart link after adding product */
+
+            updateCartLink();
 
         });
 
@@ -248,82 +148,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateCart() {
 
-        if (!cartCount || !cartItems || !cartTotal) {
-            return;
+        /* Update navbar cart */
+
+        if (cartCount) {
+            cartCount.textContent = cart.length;
         }
 
 
-        /* Cart count */
+        /* Cart content */
 
-        cartCount.textContent = cart.length;
+        if (cartItems && cartTotal) {
+
+            /* Empty cart */
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML = `
+                    <p class="gencon-empty-cart">
+                        Your cart is empty.
+                    </p>
+                `;
+
+                cartTotal.textContent =
+                    "$0.00 USD";
+
+            } else {
+
+                let total = 0;
+
+                cartItems.innerHTML = "";
 
 
-        /* Empty cart */
+                /* Products */
 
-        if (cart.length === 0) {
+                cart.forEach(function (item) {
 
-            cartItems.innerHTML = `
-                <p class="gencon-empty-cart">
-                    Your cart is empty.
-                </p>
-            `;
+                    total += Number(item.price);
 
-            cartTotal.textContent =
-                "$0.00 USD";
 
-            return;
+                    const itemElement =
+                        document.createElement("div");
+
+                    itemElement.className =
+                        "gencon-cart-item";
+
+
+                    itemElement.innerHTML = `
+
+                        <span class="gencon-cart-item-name">
+                            ${item.name}
+                        </span>
+
+                        <span class="gencon-cart-item-price">
+                            $${Number(item.price).toFixed(2)} USD
+                        </span>
+
+                    `;
+
+
+                    cartItems.appendChild(itemElement);
+
+                });
+
+
+                /* Total */
+
+                cartTotal.textContent =
+                    "$" + total.toFixed(2) + " USD";
+
+            }
+
         }
 
 
-        let total = 0;
-
-        cartItems.innerHTML = "";
-
-
-        /* Products */
-
-        cart.forEach(function (item, index) {
-
-            total += Number(item.price);
-
-
-            const itemElement =
-                document.createElement("div");
-
-            itemElement.className =
-                "gencon-cart-item";
-
-
-            itemElement.innerHTML = `
-
-                <span class="gencon-cart-item-name">
-                    ${item.name}
-                </span>
-
-                <span class="gencon-cart-item-price">
-                    $${Number(item.price).toFixed(2)} USD
-                </span>
-
-            `;
-
-
-            cartItems.appendChild(itemElement);
-
-        });
-
-
-        /* Total */
-
-        cartTotal.textContent =
-            "$" + total.toFixed(2) + " USD";
-
-
-        /* Save again */
+        /* Save cart */
 
         localStorage.setItem(
             "genconCart",
             JSON.stringify(cart)
         );
+
+
+        /* Update visibility */
+
+        updateCartLink();
+
     }
 
 
