@@ -1,5 +1,5 @@
 
-# Gencon Consulting Inc. — Orange-Only Bootstrap Website
+# GN Service — Orange-Only Bootstrap Website
 
 This is a static HTML/CSS/Bootstrap website concept inspired by the page organization and clean produce-industry presentation of SunPacific.com, but with original copy, original/local orange artwork and a single-product focus on oranges.
 
@@ -18,7 +18,7 @@ This is a static HTML/CSS/Bootstrap website concept inspired by the page organiz
 - refund-policy.html
 
 ## Business details used
-- Business name: Gencon Consulting Inc.
+- Business name: GN Service
 - EST. 1982
 
 ## Tech
